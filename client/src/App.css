@@ -15,6 +15,7 @@
   --first-text-color: #fff;
   --second-text-color: #F6762C;
   --third-text-color: #BBB7B6;
+  --fourth-text-color: #63412F;
   --fonts-main: 'Roboto', 'sans-serif';
 }
 
@@ -60,7 +61,11 @@ p {
   }
 }
 .header {
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 .header__menu ul {
   display: flex;
@@ -121,13 +126,14 @@ p {
   }
 }
 .burger__banner {
+  max-width: 1600px;
   position: relative;
 }
 .burger__banner .wrapper__text {
   max-width: 500px;
   position: absolute;
   z-index: 1;
-  left: 50px;
+  left: 150px;
 }
 .burger__banner .wrapper__text .mini__title {
   font-family: var(--fonts-main);
@@ -147,7 +153,7 @@ p {
   font-size: 16px;
   font-weight: var(--regular);
   color: var(--third-text-color);
-  margin: 20px 0;
+  margin: 35px 0;
 }
 .burger__banner .wrapper__text .burgers__btn {
   background: var(--main-color);
@@ -169,4 +175,257 @@ p {
     border: 2px solid var(--main-color);
     color: var(--second-text-color);
   }
+}
+
+.food__list {
+  background: var(--third-color);
+  padding: 80px 0;
+}
+.food__list .food__wrapp {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+@media (max-width: 991px) {
+  .food__list .food__wrapp {
+    width: inherit;
+  }
+}
+.food__list .food__wrapp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 31px;
+  justify-content: center;
+}
+.food__list .food__wrapp .food__wrapper {
+  max-width: 236px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--second-color);
+}
+.food__list .food__wrapp .food__wrapper .list__img {
+  max-width: 262px;
+  max-height: 175px;
+}
+.food__list .food__wrapp .food__wrapper .list__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.food__list .food__wrapp .food__wrapper .text__wrapp {
+  max-width: 206px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 15px 0;
+}
+.food__list .food__wrapp .food__wrapper .text__wrapp .title {
+  font-family: var(--fonts-main);
+  font-size: 20px;
+  font-weight: var(--medium);
+  color: var(--first-text-color);
+  text-align: center;
+}
+.food__list .food__wrapp .food__wrapper .text__wrapp .item__desc {
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--regular);
+  color: var(--third-text-color);
+  text-align: center;
+}
+
+.burgers__section {
+  background: var(--second-color);
+}
+.burgers__section .burgers__wrapp {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+@media (max-width: 991px) {
+  .burgers__section .burgers__wrapp {
+    width: inherit;
+  }
+}
+.burgers__section .burgers__wrapp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.burgers__section .burgers__wrapp .burger__img {
+  max-width: 550px;
+  max-height: 550px;
+}
+.burgers__section .burgers__wrapp .text__wrapper {
+  max-width: 375px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+.burgers__section .burgers__wrapp .text__wrapper .wrapper__title {
+  font-family: var(--fonts-main);
+  font-size: 44px;
+  font-weight: var(--medium);
+  color: var(--first-text-color);
+}
+.burgers__section .burgers__wrapp .text__wrapper .wrapper__text {
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--regular);
+  color: var(--third-text-color);
+}
+.burgers__section .burgers__wrapp .text__wrapper .price__wrapp {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.burgers__section .burgers__wrapp .text__wrapper .price__wrapp .new__price {
+  font-family: var(--fonts-main);
+  font-size: 20px;
+  font-weight: var(--medium);
+  color: var(--second-text-color);
+}
+.burgers__section .burgers__wrapp .text__wrapper .price__wrapp .old__price {
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--medium);
+  color: var(--fourth-text-color);
+  text-decoration: line-through;
+}
+.burgers__section .burgers__wrapp .text__wrapper .burgers__btn {
+  background: var(--main-color);
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--medium);
+  color: var(--first-text-color);
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid transparent;
+  padding: 15px 37px;
+  cursor: pointer;
+  transition: 0.6s;
+  display: inline-block;
+}
+@media (any-hover: hover) {
+  .burgers__section .burgers__wrapp .text__wrapper .burgers__btn:hover {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--second-text-color);
+  }
+}
+
+.product__section {
+  background: var(--third-color);
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+@media (max-width: 991px) {
+  .product__section {
+    width: inherit;
+  }
+}
+.product__section {
+  margin: 50px auto;
+}
+.product__section .product__wrapp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.product__section .product__wrapper {
+  max-width: 555px;
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.product__section .product__wrapper .product__overlay {
+  position: absolute;
+  max-width: 555px;
+  max-height: 300px;
+}
+.product__section .product__wrapper .product__overlay img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.product__section .product__wrapper .product__text-wrapper {
+  position: relative;
+  max-width: 263px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+.product__section .product__wrapper .product__text-wrapper .title__prod {
+  font-family: var(--fonts-main);
+  font-size: 30px;
+  font-weight: var(--medium);
+  color: var(--first-text-color);
+}
+.product__section .product__wrapper .product__text-wrapper .desc__title {
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--regular);
+  color: var(--third-text-color);
+}
+.product__section .product__wrapper .product__text-wrapper .price__wrapp {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.product__section .product__wrapper .product__text-wrapper .price__wrapp .new__price {
+  font-family: var(--fonts-main);
+  font-size: 20px;
+  font-weight: var(--medium);
+  color: var(--second-text-color);
+}
+.product__section .product__wrapper .product__text-wrapper .price__wrapp .old__price {
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--medium);
+  color: var(--fourth-text-color);
+  text-decoration: line-through;
+}
+.product__section .product__wrapper .product__text-wrapper .product__btn {
+  background: var(--main-color);
+  font-family: var(--fonts-main);
+  font-size: 16px;
+  font-weight: var(--medium);
+  color: var(--first-text-color);
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid transparent;
+  padding: 15px 37px;
+  cursor: pointer;
+  transition: 0.6s;
+  display: inline-block;
+}
+@media (any-hover: hover) {
+  .product__section .product__wrapper .product__text-wrapper .product__btn:hover {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--second-text-color);
+  }
+}
+.product__section .product__wrapper:nth-child(odd) {
+  justify-content: flex-end;
+}
+.product__section .product__wrapper:nth-child(even) {
+  justify-content: flex-start;
+}
+.product__section .product__wrapper:nth-child(even) .product__text-wrapper {
+  padding: 0 0 0 25px;
 }/*# sourceMappingURL=App.css.map */
