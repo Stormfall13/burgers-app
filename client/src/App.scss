@@ -22,7 +22,6 @@
 html, body{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     position: relative;
     background: var(--third-color);
 }
@@ -40,6 +39,8 @@ h1,h2,h3,h4,h5,h6{
 p{
     margin: 0;
 }
+
+
 @mixin content__width{
     max-width: 1170px;
     width: 100%;
@@ -104,6 +105,12 @@ p{
     left: 0;
     right: 0;
     top: 0;
+    .burber__btn{
+        display: none;
+    }
+    .close__btn{
+        display: none;
+    }
     &__menu{
         ul{
             display: flex;
@@ -171,6 +178,7 @@ p{
     }
 }
 
+
 .food__list{
     background: var(--third-color);
     padding: 80px 0;
@@ -231,6 +239,11 @@ p{
         .burger__img{
             max-width: 550px;
             max-height: 550px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
         }
         .text__wrapper{
             max-width: 375px;
@@ -308,6 +321,8 @@ p{
             @include price__styles();
             .product__btn{
                 @include main-btn__style();
+                padding: 11px 35px;
+                font-size: 12px;
             }
         }
     }
@@ -318,6 +333,315 @@ p{
         justify-content: flex-start;
         .product__text-wrapper{
             padding: 0 0 0 25px;
+        }
+    }
+}
+
+.feedback{
+    background: var(--third-color);
+    padding: 60px 0;
+    .feedback__wrapp{
+        @include content__width();
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .feedback__img{
+            max-width: 390px;
+            max-height: 360px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    .feedback__text{
+        max-width: 368px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .feedback__icon{
+            max-width: 48px;
+            max-height: 48px;
+            margin: 0 0 37px 0;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .feedback__wrapper-text{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .desc{
+                font-family: var(--fonts-main);
+                font-size: 16px;
+                font-weight: var(--regular);
+                color: var(--third-text-color);
+                margin: 0 0 27px 0;
+            }
+            .title{
+                font-family: var(--fonts-main);
+                font-size: 24px;
+                font-weight: var(--medium);
+                color: var(--first-text-color);
+            }
+            .notation{
+                font-family: var(--fonts-main);
+                font-size: 12px;
+                font-weight: var(--medium);
+                color: var(--third-text-color);
+            }
+        }
+    }
+}
+
+.download__menu{
+    background: var(--second-color);
+    padding: 58px 0;
+    .download__wrapp{
+        @include content__width();
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .title__download{
+            font-family: var(--fonts-main);
+            font-size: 40px;
+            font-weight: var(--medium);
+            color: var(--first-text-color);
+        }
+        .download__btn{
+            @include main-btn__style();
+        }
+    }
+}
+
+.footer{
+    background: var(--third-color);
+    padding: 122px 0;
+    .footer__wrapp{
+        @include content__width();
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        .left__col{
+            .logo__footer{
+                max-width: 84px;
+                max-height: 66px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .contact__wrapp{
+                display: flex;
+                flex-direction: column;
+                gap: 9px;
+                .contact__wrapper{
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    .icon__contact{
+                        width: 12px;
+                        height: 12px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                    .link__contact{
+                        font-family: var(--fonts-main);
+                        font-size: 12px;
+                        font-weight: var(--regular);
+                        color: var(--third-text-color);
+                    }
+                }
+            }
+        }
+        .col__menu-wrapp{
+            display: flex;
+            justify-content: space-between;
+            max-width: 562px;
+            width: 100%;
+            .title__col-menu{
+                font-family: var(--fonts-main);
+                font-size: 16px;
+                font-weight: var(--medium);
+                color: var(--first-text-color);
+                margin: 0 0 14px 0;
+            }
+            .links__wrapp{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                a{
+                    font-family: var(--fonts-main);
+                    font-size: 12px;
+                    font-weight: var(--regular);
+                    color: var(--third-text-color);
+                }
+            }
+        }
+        .social__wrapp{
+            max-width: 108px;
+            .social__title{
+                font-family: var(--fonts-main);
+                font-size: 16px;
+                font-weight: var(--medium);
+                color: var(--first-text-color);
+                margin: 0 0 16px 0;
+            }
+            .social__wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 489px) {
+    .header{
+        justify-content: space-evenly;
+        .burger__btn{
+            display: block;
+            position: fixed;
+            right: 5px;
+            top: 5px;
+        }
+        .close__btn{
+            display: block;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        .header__menu{
+            background: var(--second-color);
+            z-index: 3;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            transition: 0.6s;
+            ul{
+                flex-direction: column;
+                margin: 15px 0 0 0;
+            }
+        }
+    }
+    .burger__banner{
+        .wrapper__text{
+            z-index: 0;
+            position: initial;
+            .page__title{
+                font-size: 24px;
+            }
+            .description__burgers{
+                font-size: 15px;
+                margin: 15px 0;
+            }
+        }
+    }
+    .food__list{
+        padding: 20px 0;
+        .food__wrapp{
+            gap: 10px;
+            .food__wrapper{
+                max-width: 165px;
+                .text__wrapp{
+                    .title{
+                        font-size: 16px;
+                    }
+                    .item__desc{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .burgers__section{
+        padding: 10px 0;
+        .burgers__wrapp{
+            .burger__img{
+                max-width: 180px;
+                max-height: 190px;
+            }
+            .text__wrapper{
+                .wrapper__title{
+                    font-size: 25px;
+                }
+                .wrapper__text{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .product__section{
+        margin: 20px 0;
+        .product__wrapp{
+            gap: 15px;
+        }
+        .product__wrapper{
+            min-height: initial;
+            padding: 5px;
+            .product__text-wrapper{
+                max-width: 156px;
+                .title__prod{
+                    font-size: 20px;
+                }
+                .desc__title{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .feedback{
+        padding: 20px 0;
+        .feedback__wrapp{
+            .feedback__img{
+                display: none;
+            }
+        }
+        .feedback__text{
+            .feedback__icon{
+                margin: 0 0 20px 0; 
+            }
+            .feedback__wrapper-text{
+                .desc{
+                    font-size: 12px;
+                }
+                .title{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .download__menu{
+        padding: 20px 0;
+        .download__wrapp{
+            justify-content: center;
+            gap: 15px;
+            .title__download{
+                font-size: 20px;
+            }
+        }
+    }
+    .footer{
+        padding: 20px 0;
+        .footer__wrapp{
+            align-items: center;
+            .col__menu-wrapp{
+                display: none;
+            }
         }
     }
 }
