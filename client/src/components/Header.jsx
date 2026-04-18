@@ -2,7 +2,7 @@ import logo from '../assets/logo.png';
 import burger__icon from '../assets/burger__icon.svg';
 import close from '../assets/close.svg';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const dataMenu = [
    {
@@ -35,9 +35,34 @@ const dataMenu = [
 const Header = () => {
 
    const [openedMenu, setOpenedMenu] = useState(true);
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 991);
    
+   // Проверка размера экрана
+   useEffect(() => {
+      const handleResize = () => {
+         const mobile = window.innerWidth <= 991;
+         setIsMobile(mobile);
+         
+         // Если экран стал больше 991px - закрываем бургер меню
+         if (!mobile) {
+            setOpenedMenu(true);
+         }
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+   }, []);
+
    const handleLinkClick = (e) => {
-      setOpenedMenu(true); // Закрываем меню
+      if (isMobile) {
+         setOpenedMenu(true); // Закрываем меню только на мобильных
+      }
+   };
+
+   const toggleMenu = () => {
+      if (isMobile) {
+         setOpenedMenu(!openedMenu);
+      }
    };
 
    return (
@@ -48,12 +73,17 @@ const Header = () => {
          <div className="logo">
             <img src={logo} alt="logo" />
          </div>
-         <nav className='header__menu' style={{
-            transform: `translate(${openedMenu ? '100vh' : '0vh'})`
-         }}>
-            <div className="close__btn" onClick={() => setOpenedMenu(true)}>
-               <img src={close} alt="close btn" />
-            </div>
+         <nav 
+            className={`header__menu ${isMobile ? 'mobile' : 'desktop'}`}
+            style={isMobile ? {
+               transform: `translateX(${openedMenu ? '100%' : '0'})`
+            } : {}}
+         >
+            {isMobile && (
+               <div className="close__btn" onClick={() => setOpenedMenu(true)}>
+                  <img src={close} alt="close btn" />
+               </div>
+            )}
             <ul>
                {dataMenu.map(item => (
                   <li key={item.id}>
