@@ -45,7 +45,7 @@ p{
     max-width: 1170px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 15px;
     @media (max-width: 991px) {
         width: inherit;
     }
@@ -539,6 +539,7 @@ p{
         }
     }
     .burger__banner{
+        height: 90vh;
         .wrapper__text{
             z-index: 0;
             position: initial;
@@ -556,7 +557,7 @@ p{
         .food__wrapp{
             gap: 10px;
             .food__wrapper{
-                max-width: 165px;
+                max-width: 160px;
                 .text__wrapp{
                     .title{
                         font-size: 16px;

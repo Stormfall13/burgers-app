@@ -52,7 +52,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .header {
@@ -123,7 +123,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .burger__banner {
@@ -190,7 +190,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .food__list .food__wrapp {
@@ -249,7 +249,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .burgers__section .burgers__wrapp {
@@ -336,7 +336,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .product__section {
@@ -453,7 +453,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .feedback .feedback__wrapp {
@@ -527,7 +527,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .download__menu .download__wrapp {
@@ -576,7 +576,7 @@ p {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 15px;
 }
 @media (max-width: 991px) {
   .footer .footer__wrapp {
@@ -695,6 +695,9 @@ p {
     flex-direction: column;
     margin: 15px 0 0 0;
   }
+  .burger__banner {
+    height: 90vh;
+  }
   .burger__banner .wrapper__text {
     z-index: 0;
     position: initial;
@@ -713,7 +716,7 @@ p {
     gap: 10px;
   }
   .food__list .food__wrapp .food__wrapper {
-    max-width: 165px;
+    max-width: 160px;
   }
   .food__list .food__wrapp .food__wrapper .text__wrapp .title {
     font-size: 16px;
